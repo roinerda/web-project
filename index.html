@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PaginaPrincipal</title>
+    <link rel="stylesheet" href="Style.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -104,26 +105,28 @@
               }
             </script>
 
-          <!-- entrada -->
+          <!-- entrada mes-->
+          <!-- Entrada Mes, Día y Año -->
           <div class="d-flex align-items-center flex-grow-1">
             <div class="col-md-12">
               <strong class="mb-2 d-block">Seleccione la fecha de
                 Entrada</strong>
+
               <div class="d-flex gap-2">
+
+                <!-- Dropdown Mes -->
                 <div class="dropdown">
                   <button id="dropdownMesBtn"
-                    class="btn btn-outline-primary dropdown-toggle" href="#"
-                    role="button"
+                    class="btn btn-outline-primary dropdown-toggle"
+                    href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    mes
+                    Mes
                   </button>
 
-                  <!--mes -->
                   <ul class="dropdown-menu"
                     style="max-height: 200px; overflow-y: auto;">
                     <li><a class="dropdown-item" href="#"
-                        onclick="seleccionarMes('Enero')">Enero
-                      </a></li>
+                        onclick="seleccionarMes('Enero')">Enero</a></li>
                     <li><a class="dropdown-item" href="#"
                         onclick="seleccionarMes('Febrero')">Febrero</a></li>
                     <li><a class="dropdown-item" href="#"
@@ -150,22 +153,26 @@
                 </div>
 
                 <script>
-                   let mesSeleccionado = null;
-                function seleccionarMes(nombreMes) {
-                  document.getElementById('dropdownMesBtn').textContent = nombreMes;
-                  mesSeleccionado = nombreMes;
-                  console.log("mes seleccionado:", mesSeleccionado);
-                }
-              </script>
+        document.addEventListener("DOMContentLoaded", function () {
+          let mesSeleccionado = null;
+      
+          function seleccionarMes(nombreMes) {
+            document.getElementById('dropdownMesBtn').textContent = nombreMes;
+            mesSeleccionado = nombreMes;
+            console.log("Mes seleccionado:", mesSeleccionado);
+          }
+      
+          window.seleccionarMes = seleccionarMes;
+        });
+      </script>
 
-                <!--Dias -->
-                <div class=" dropdown">
-
+                <!-- Dropdown Día -->
+                <div class="dropdown">
                   <button id="dropdownDiasBtn"
-                    class="btn btn-outline-primary dropdown-toggle" href="#"
-                    role="button"
+                    class="btn btn-outline-primary dropdown-toggle"
+                    href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    Dias
+                    Días
                   </button>
 
                   <ul class="dropdown-menu"
@@ -234,24 +241,31 @@
                         onclick="seleccionarDia('31')">31</a></li>
                   </ul>
                 </div>
-                <script>
-                  let diaSeleccionado = null;
-                  function seleccionarDia(dia) {
-                    document.getElementById('dropdownDiasBtn').textContent = dia;
-                    diaSeleccionado = dia;
-                    console.log("dia seleccionado:", diaSeleccionado);
-                  }
-                </script>
 
-                <!-- Año -->
+                <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let diaSeleccionado = null;
+
+    function seleccionarDia(nombreDia) {
+      document.getElementById('dropdownDiasBtn').textContent = nombreDia;
+      diaSeleccionado = nombreDia;
+      console.log("Día seleccionado:", diaSeleccionado);
+    }
+
+    // Asigna la función al ámbito global
+    window.seleccionarDia = seleccionarDia;
+  });
+</script>
+
+                <!-- Dropdown Año -->
                 <div class="dropdown">
                   <button id="dropdownAñoBtn"
-                    class="btn btn-outline-primary dropdown-toggle" href="#"
-                    role="button"
+                    class="btn btn-outline-primary dropdown-toggle"
+                    href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Año
                   </button>
-                  
+
                   <ul class="dropdown-menu"
                     style="max-height: 200px; overflow-y: auto;">
                     <li><a class="dropdown-item" href="#"
@@ -262,20 +276,19 @@
                         onclick="seleccionarAño('2027')">2027</a></li>
                   </ul>
                 </div>
+
                 <script>
-                  let añoSeleccionado = null;
-                 
-                  function seleccionarAño(año) {
-                    document.getElementById('dropdownAñoBtn').textContent = año;
-                    añoSeleccionado = año;
-                    console.log("año seleccionado:", añoSeleccionado);
-                  }
-                </script>
+        let añoSeleccionado = null;
+        function seleccionarAño(año) {
+          document.getElementById('dropdownAñoBtn').textContent = año;
+          añoSeleccionado = año;
+          console.log("año seleccionado:", añoSeleccionado);
+        }
+      </script>
 
               </div>
             </div>
           </div>
-
           <!-- salida reserva-->
           <div class="d-flex align-items-center flex-grow-1">
             <div class="col-md-12">
@@ -285,156 +298,156 @@
               <div class="d-flex gap-2">
                 <div class="dropdown">
                   <button id="dropdownMesSalidaBtn"
-                  class="btn btn-outline-primary dropdown-toggle" href="#"
-                  role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  mes
-                </button>
+                    class="btn btn-outline-primary dropdown-toggle" href="#"
+                    role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    mes
+                  </button>
 
-                <!--mes -->
-                <ul class="dropdown-menu"
-                  style="max-height: 200px; overflow-y: auto;">
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Enero')">Enero
-                    </a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Febrero')">Febrero</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Marzo')">Marzo</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Abril')">Abril</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Mayo')">Mayo</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Junio')">Junio</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Julio')">Julio</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Agosto')">Agosto</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Septiembre')">Septiembre</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Octubre')">Octubre</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Noviembre')">Noviembre</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarMes('Diciembre')">Diciembre</a></li>
-                </ul>
-              </div>
+                  <!--mes -->
+                  <ul class="dropdown-menu"
+                    style="max-height: 200px; overflow-y: auto;">
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Enero')">Enero
+                      </a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Febrero')">Febrero</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Marzo')">Marzo</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Abril')">Abril</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Mayo')">Mayo</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Junio')">Junio</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Julio')">Julio</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Agosto')">Agosto</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Septiembre')">Septiembre</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Octubre')">Octubre</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Noviembre')">Noviembre</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarMesSalida('Diciembre')">Diciembre</a></li>
+                  </ul>
+                </div>
 
-              <script>
+                <script>
                  let mesSeleccionadoSalida = null;
-              function seleccionarMes(nombreMes) {
+              function seleccionarMesSalida(nombreMes) {
                 document.getElementById('dropdownMesSalidaBtn').textContent = nombreMes;
                 mesSeleccionadoSalida = nombreMes;
                 console.log("mes seleccionado:", mesSeleccionadoSalida);
               }
             </script>
-                    <!--Dias -->
-                    <div class=" dropdown">
+                <!--Dias -->
+                <div class=" dropdown">
 
-                      <button id="dropdownDiasSalidaBtn"
-                        class="btn btn-outline-primary dropdown-toggle" href="#"
-                        role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Dias
-                      </button>
-    
-                      <ul class="dropdown-menu"
-                        style="max-height: 200px; overflow-y: auto;">
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('1')">1</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('2')">2</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('3')">3</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('4')">4</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('5')">5</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('6')">6</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('7')">7</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('8')">8</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('9')">9</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('10')">10</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('11')">11</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('12')">12</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('13')">13</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('14')">14</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('15')">15</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('16')">16</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('17')">17</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('18')">18</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('19')">19</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('20')">20</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('21')">21</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('22')">22</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('23')">23</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('24')">24</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('25')">25</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('26')">26</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('27')">27</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('28')">28</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('29')">29</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('30')">30</a></li>
-                        <li><a class="dropdown-item" href="#"
-                            onclick="seleccionarDia('31')">31</a></li>
-                      </ul>
-                    </div>
-                    <script>
+                  <button id="dropdownDiasSalidaBtn"
+                    class="btn btn-outline-primary dropdown-toggle" href="#"
+                    role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Dias
+                  </button>
+
+                  <ul class="dropdown-menu"
+                    style="max-height: 200px; overflow-y: auto;">
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('1')">1</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('2')">2</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('3')">3</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('4')">4</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('5')">5</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('6')">6</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('7')">7</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('8')">8</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('9')">9</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('10')">10</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('11')">11</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('12')">12</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('13')">13</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('14')">14</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('15')">15</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('16')">16</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('17')">17</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('18')">18</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('19')">19</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('20')">20</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('21')">21</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('22')">22</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('23')">23</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('24')">24</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('25')">25</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('26')">26</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('27')">27</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('28')">28</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('29')">29</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('30')">30</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarDiaSalida('31')">31</a></li>
+                  </ul>
+                </div>
+                <script>
                       let diaSeleccionadoSalida = null;
-                      function seleccionarDia(dia) {
+                      function seleccionarDiaSalida(dia) {
                         document.getElementById('dropdownDiasSalidaBtn').textContent = dia;
                         diaSeleccionadoSalida = dia;
                         console.log("dia seleccionado para salir :", diaSeleccionadoSalida);
                       }
                     </script>
 
-              <!-- Año Salida-->
-              <div class="dropdown">
-                <button id="dropdownAñoSalidaBtn"
-                  class="btn btn-outline-primary dropdown-toggle" href="#"
-                  role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  Año
-                </button>
-                
-                <ul class="dropdown-menu"
-                  style="max-height: 200px; overflow-y: auto;">
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarAñoSalida('2025')">2025</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarAñoSalida('2026')">2026</a></li>
-                  <li><a class="dropdown-item" href="#"
-                      onclick="seleccionarAñoSalida('2027')">2027</a></li>
-                </ul>
-              </div>
-              <script>
+                <!-- Año Salida-->
+                <div class="dropdown">
+                  <button id="dropdownAñoSalidaBtn"
+                    class="btn btn-outline-primary dropdown-toggle" href="#"
+                    role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Año
+                  </button>
+
+                  <ul class="dropdown-menu"
+                    style="max-height: 200px; overflow-y: auto;">
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAñoSalida('2025')">2025</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAñoSalida('2026')">2026</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAñoSalida('2027')">2027</a></li>
+                  </ul>
+                </div>
+                <script>
                 let añoSeleccionadoSalida = null;
                
                 function seleccionarAñoSalida(año) {
@@ -455,170 +468,222 @@
               <strong class="mb-2 d-block">Seleccione la cantidad</strong>
               <div class="d-flex gap-2">
                 <div class="dropdown">
-                  <button class="btn btn-outline-primary dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown">
+                  <button id="dropdownAñoAdultoBtn"
+                    class="btn btn-outline-primary dropdown-toggle" href="#"
+                    role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     Adultos
                   </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">1</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">2</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">3</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">4</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">5</a></li>
+
+                  <ul class="dropdown-menu"
+                    style="max-height: 200px; overflow-y: auto;">
+
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAdulto('1')">1</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAdulto('2')">2</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAdulto('3')">3</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAdulto('4')">4</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarAdulto('5')">5</a></li>
                   </ul>
                 </div>
+
+                <script>
+                  let adultoSeleccionado = null;
+                  function seleccionarAdulto(adulto) {
+                    document.getElementById('dropdownAñoAdultoBtn').textContent = adulto;
+                    adultoSeleccionado = adulto;
+                    console.log("adulto seleccionado:", adultoSeleccionado);
+                  }
+                </script>
+
                 <div class="dropdown">
-                  <button class="btn btn-outline-primary dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown">
+                  <button id="dropdownninoBtn"
+                    class="btn btn-outline-primary dropdown-toggle" href="#"
+                    role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     Niños
+
                   </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">1</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">2</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">3</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">4</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">5</a></li>
+
+                  <ul class="dropdown-menu"
+                    style="max-height: 200px; overflow-y: auto;">
+
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarnino('1')">1</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarnino('2')">2</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarnino('3')">3</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarnino('4')">4</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarnino('5')">5</a></li>
                   </ul>
                 </div>
+
+                <script>
+                  let ninoSeleccionado = null;
+                  function seleccionarnino(nino) {
+                    document.getElementById('dropdownninoBtn').textContent = nino;
+                    ninoSeleccionado = nino;
+                    console.log("niño seleccionado:", ninoSeleccionado);
+                  }
+                </script>
+
                 <div class="dropdown">
-                  <button class="btn btn-outline-primary dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown">
+                  <button id="dropdownHabitacionesBtn"
+                    class="btn btn-outline-primary dropdown-toggle" href="#"
+                    role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     Habitaciones
                   </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">1</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">2</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">3</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">4</a></li>
-                    <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#">5</a></li>
+
+                  <ul class="dropdown-menu"
+                    style="max-height: 200px; overflow-y: auto;">
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarHabitaciones('1')">1</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarHabitaciones('2')">2</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarHabitaciones('3')">3</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarHabitaciones('4')">4</a></li>
+                    <li><a class="dropdown-item" href="#"
+                        onclick="seleccionarHabitaciones('5')">5</a></li>
                   </ul>
+
+                  <script>
+                    let habitacionesSeleccionadas = null;
+                    function seleccionarHabitaciones(habitaciones) {
+                      document.getElementById('dropdownHabitacionesBtn').textContent = habitaciones;
+                      habitacionesSeleccionadas = habitaciones;
+                      console.log("habitaciones seleccionadas:", habitacionesSeleccionadas);
+                    }
+                  </script>
                 </div>
+
               </div>
             </div>
           </div>
+        </header>
 
-          <div class="d-flex align-items-center flex-grow-1">
-            <div class="col-md-12">
-              <strong class="mb-2 d-block">Buscar Hotel</strong>
-              <div class="d-flex gap-2">
-                <div class="dropdown">
-                  <button class="btn btn-primary px-4 py-2">Buscar</button>
-                </div>
+        <div class="d-flex align-items-center flex-grow-1">
+          <div class="col-md-12">
+            <strong class="mb-2 d-block">Buscar Hotel</strong>
+            <div class="d-flex gap-2">
+              <div class="dropdown">
+                <button class="btn btn-primary px-4 py-2">Buscar</button>
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
+    </div>
 
-      <div class="container">
-        <div class="mt-5"></div>
-        <h1 class="text-center mb-4">Promociones del Mes</h1>
+    <div class="container">
+      <div class="mt-5"></div>
+      <h1 class="text-center mb-4">Promociones del Mes</h1>
 
-        <div class="contenedor">
-          <header class="row justify-content-center"
-            style="background-color: #FAF6EF;">
-            <div class="col-lg-3 col-md-6 col-sm-12 col-3">
-              <div class="card" style=width:100%>
-                <img src="img/foto.jpg" class="card-img-top" alt="img">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the
-                    card title and make up
-                    the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+      <div class="contenedor">
+        <header class="row justify-content-center"
+          style="background-color: #FAF6EF;">
+          <div class="col-lg-3 col-md-6 col-sm-12 col-3">
+            <div class="card" style=width:100%>
+              <img src="img/barceloPlaya.jpg" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title">Barceló Tambor</h5>
+                <p class="card-text">The Art of Converting Your Barceló Hotel
+                  Experience into Something Unforgettable.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
 
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-3">
-              <div class="card" style=width:100%>
-                <img src="img/foto.jpg" class="card-img-top" alt="img">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the
-                    card title and make up
-                    the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-3">
-              <div class="card" style=width:100%>
-                <img src="img/foto.jpg" class="card-img-top" alt="img">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the
-                    card title and make up
-                    the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-3">
-              <div class="card" style=width:100%>
-                <img src="img/foto.jpg" class="card-img-top" alt="img">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the
-                    card title and make up
-                    the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-          </header>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="mt-5"></div>
-        <h1 class="text-center mb-4">Somos mas que un viaje, somos
-          recuerdos</h1>
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/imagen00.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/foto.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/imagen01.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
-          <button class="carousel-control-prev" type="button"
-            data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button"
-            data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-3">
+            <div class="card" style=width:100%>
+              <img src="img/Nayara.jpg" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title">Nayara Springs</h5>
+                <p class="card-text">Escape to Nayara Springs, where love
+                  flourishes in the heart of Costa Rica's rainforest..</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-3">
+            <div class="card" style=width:100%>
+              <img src="img/four.jpg" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title">Four Seasons </h5>
+                <p class="card-text">Discover Exciting Activities Designed Just
+                  For Children At Kids For All Seasons, Book Now.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 col-3">
+            <div class="card" style=width:100%>
+              <img src="img/arenal.jpg" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title">Arenal Manoa</h5>
+                <p class="card-text">Stay on a traditional dairy farm near
+                  Arenal Volcano National Park.Hot springs. Spacious suites.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </header>
       </div>
+    </div>
 
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></scrip>
-    </body>
+    <div class="container">
+      <div class="mt-5"></div>
+      <h1 class="text-center mb-4">Somos más que un viaje, somos
+        recuerdos</h1>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/bosquef.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/arenal-costa-rica-hot-springs-resort-h1.jpg"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/barcelocuarto.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
 
-  </html>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous">
+    </script>
+
+    <footer>
+      <div class="container text-center py-4">
+        <h5>Contáctanos</h5>
+        <p>Email: reservasfiocon.com
+          <p>&copy; 2025 </p>
+        </footer>
+
+      </body>
+
+    </html>
