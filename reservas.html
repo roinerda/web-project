@@ -6,7 +6,7 @@
     <title>Reservas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   </head>
-  <body>
+  <body style="background-color: #FAF6EF;">
     <nav class="navbar navbar-expand-lg" style="background-color: #FAF6EF;">
         <div class="container-fluid">
             <a class="navbar-brand" href="indexPrincipal.html"><img src="img/logo.png" width="100px"></a>
@@ -40,6 +40,118 @@
                 </ul>
             </div>
     </nav>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Formulario de Reserva</h2>
+        <form>
+           
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+          
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="correo" required>
+          </div>
+          <div class="mb-3">
+            <label for="hotel" class="form-label">Nombre del Hotel</label>
+            <select class="form-select" id="hotel" required>
+              <option selected disabled>Seleccionar hotel</option>
+              <option value="barcelo">Barceló Tambor - All Inclusive</option>
+              <option value="nayara">Nayara Gardens Four Seasons</option>
+              <option value="papagayo">Resort Costa Rica at Peninsula Papagayo</option>
+              <option value="manoa">Arenal Manoa</option>
+            </select>
+          </div>
+      
+          <div class="row mb-3">
+            <div class="col">
+              <label for="entrada" class="form-label">Fecha de Entrada</label>
+              <input type="date" class="form-control" id="entrada" required>
+            </div>
+            <div class="col">
+              <label for="salida" class="form-label">Fecha de Salida</label>
+              <input type="date" class="form-control" id="salida" required>
+            </div>
+          </div>
+      
+          <div class="row mb-3">
+            <div class="col">
+              <label for="adultos" class="form-label">Adultos</label>
+              <input type="number" class="form-control" id="adultos" min="1" required>
+            </div>
+            <div class="col">
+              <label for="ninos" class="form-label">Niños</label>
+              <input type="number" class="form-control" id="ninos" min="0">
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label for="habitacion" class="form-label">Tipo de Habitación</label>
+            <select class="form-select" id="habitacion" required>
+              <option disabled selected>Seleccionar</option>
+              <option value="individual">Individual</option>
+              <option value="doble">Doble</option>
+              <option value="suite">Suite</option>
+            </select>
+          </div>
+      
+          <button type="submit" class="btn btn-primary w-100">Ir a Pago</button>
+        </form>
+      </div>
+      
+
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center mb-4">Mis Reservas</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover align-middle text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Hotel</th>
+                <th>Entrada</th>
+                <th>Salida</th>
+                <th>Adultos</th>
+                <th>Niños</th>
+                <th>Habitación</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>001</td>
+                <td>Fiorella Zamora</td>
+                <td>fio@email.com</td>
+                <td>Arenal Manoa
+                <td>202405-01</td>
+                <td>2024-04</td>
+                <td>2</td>
+                <td>1</td>
+                <td>Suite</td>
+                <td><span class="badge bg-success">Finalizada</span></td>
+              </tr>
+              <tr>
+                <td>002</td>
+                <td>Fiorella Zamora</td>
+                <td>fio@email.com</td>
+                <td>Resort Costa Rica at Peninsula Papagayo</td>
+                <td>2025-05-10</td>
+                <td>2025-05-13</td>
+                <td>1</td>
+                <td>0</td>
+                <td>Individual</td>
+                <td><span class="badge bg-success">En proceso</span></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+   
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
