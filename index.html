@@ -456,6 +456,58 @@
                   console.log("año seleccionado:", añoSeleccionadoSalida);
                 }
               </script>
+                <script>
+                  const meses = {
+                    "Enero": 0, "Febrero": 1, "Marzo": 2, "Abril": 3,
+                    "Mayo": 4, "Junio": 5, "Julio": 6, "Agosto": 7,
+                    "Septiembre": 8, "Octubre": 9, "Noviembre": 10, "Diciembre": 11
+                  };
+                
+                  // Variables para fecha de entrada (asumo que existen)
+                  let seleccionarMes = null;
+                  let seleccionarDia = null;
+                  let seleccionarAño= null;
+                
+                  // Variables para fecha de salida (ya las tenés definidas en tu código)
+                  // mesSeleccionadoSalida
+                  // diaSeleccionadoSalida
+                  // añoSeleccionadoSalida
+                </script>
+
+<script>
+  function validarFechas() {
+    const seleccionarMes = document.getElementById('dropdownMesBtn').textContent;
+    const seleccionarDia = document.getElementById('dropdownDiasBtn').textContent;
+    const seleccionarAño = document.getElementById('dropdownAñoBtn').textContent;
+    if (
+      !seleccionarMes || !seleccionarDia || !seleccionarAño ||
+      !mesSeleccionadoSalida || !diaSeleccionadoSalida || !añoSeleccionadoSalida
+    ) {
+      alert("⚠️ Debes seleccionar todas las fechas de entrada y salida.");
+      return;
+    }
+
+    const fechaEntrada = new Date(
+      parseInt(seleccionarAño),
+      meses[seleccionarMes],
+      parseInt(seleccionarDia)
+    );
+
+    const fechaSalida = new Date(
+      parseInt(añoSeleccionadoSalida),
+      meses[mesSeleccionadoSalida],
+      parseInt(diaSeleccionadoSalida)
+    );
+
+    if (fechaSalida <= fechaEntrada) {
+      alert("❌ La fecha de salida debe ser posterior a la fecha de entrada.");
+    } else {
+      alert("✅ Las fechas son válidas.");
+    }
+  }
+</script>
+  
+                  <button class="btn btn-primary px-4 py-2" onclick="validarFechas()">Validar Fechas</button>   
 
               </div>
             </div>
