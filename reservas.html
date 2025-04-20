@@ -54,6 +54,43 @@
             <input type="email" class="form-control" id="correo" required>
           </div>
           <div class="mb-3">
+            <label for="telefono" class="form-label">Número Telefónico</label>
+            <input type="tel" class="form-control" id="telefono" placeholder="Ej: 88888888" pattern="[0-9]{8,15}" maxlength="15" required>
+            <div class="form-text">Ingrese solo números, entre 8 y 15 dígitos.</div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="pais" class="form-label">País</label>
+            <select class="form-select" id="pais" required>
+              <option selected disabled>Lista de Paises</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Brasil">Brasil</option>
+              <option value="Canadá">Canadá</option>
+              <option value="Chile">Chile</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Ecuador"></option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="España">España</option>
+              <option value="Estados Unidos">Estados Unidos</option>
+              <option value="Francia">Francia</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Italia">Italia</option>
+              <option value="México">México</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Panamá">Panamá</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Perú">Perú</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Puerto Rico">Puerto Rico</option>
+              <option value="República Dominicana">República Dominicana</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Venezuela">Venezuela</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
             <label for="hotel" class="form-label">Nombre del Hotel</label>
             <select class="form-select" id="hotel" required>
               <option selected disabled>Seleccionar hotel</option>
@@ -95,8 +132,30 @@
               <option value="suite">Suite</option>
             </select>
           </div>
+
+          <div class="mb-3">
+            <label for="tour" class="form-label">Seleccionar Tour</label>
+            <select class="form-select" id="tour" required>
+              <option value="">Seleccione un tour</option>
+              <option value="Tour al Volcán Arenal">Tour al Volcán Arenal</option>
+              <option value="Caminata en la selva nocturna">Caminata en la selva nocturna</option>
+              <option value="Visita a Catarata La Fortuna">Visita a Catarata La Fortuna</option>
+              <option value="Tour en canopy / tirolesa">Tour en canopy / tirolesa</option>
+              <option value="Relajación en aguas termales">Relajación en aguas termales</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="terminos" required>
+            <label class="form-check-label" for="terminos">
+              Estoy de acuerdo con los <a href="#" target="_blank">términos y políticas de privacidad</a>.
+            </label>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-primary w-100" onclick="window.location.href='Pago.html'">Ir a Pagar</button>
+
+          </div>
       
-          <button type="submit" class="btn btn-primary w-100">Ir a Pago</button>
         </form>
       </div>
       
@@ -110,6 +169,8 @@
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Correo</th>
+                <th>telefono</th>
+                <th>Pais</th>
                 <th>Hotel</th>
                 <th>Entrada</th>
                 <th>Salida</th>
@@ -124,6 +185,8 @@
                 <td>001</td>
                 <td>Fiorella Zamora</td>
                 <td>fio@email.com</td>
+                <td>88402850</td>
+                <td>Costa Rica</td>
                 <td>Arenal Manoa
                 <td>202405-01</td>
                 <td>2024-04</td>
@@ -136,6 +199,8 @@
                 <td>002</td>
                 <td>Fiorella Zamora</td>
                 <td>fio@email.com</td>
+                <td>88402850</td>
+                <td>Costa Rica</td>
                 <td>Resort Costa Rica at Peninsula Papagayo</td>
                 <td>2025-05-10</td>
                 <td>2025-05-13</td>
