@@ -13,7 +13,7 @@
       crossorigin="anonymous">
   </head>
 
-  <body style="background-color: #FAF6EF;">
+  <body style="background-color: #FAF6EF">
     <header>
       <nav class="navbar navbar-expand-lg" style="background-color: #FAF6EF;">
         <div class="container-fluid">
@@ -456,6 +456,49 @@
                   console.log("año seleccionado:", añoSeleccionadoSalida);
                 }
               </script>
+                <script>
+                  const meses = {
+                    "Enero": 0, "Febrero": 1, "Marzo": 2, "Abril": 3,
+                    "Mayo": 4, "Junio": 5, "Julio": 6, "Agosto": 7,
+                    "Septiembre": 8, "Octubre": 9, "Noviembre": 10, "Diciembre": 11
+                  };
+                </script>
+
+<script>
+  function validarFechas() {
+    const seleccionarMes = document.getElementById('dropdownMesBtn').textContent;
+    const seleccionarDia = document.getElementById('dropdownDiasBtn').textContent;
+    const seleccionarAño = document.getElementById('dropdownAñoBtn').textContent;
+    
+    if (
+      !seleccionarMes || !seleccionarDia || !seleccionarAño ||
+      !mesSeleccionadoSalida || !diaSeleccionadoSalida || !añoSeleccionadoSalida
+    ) {
+      alert(" Debes seleccionar todas las fechas de entrada y salida.");
+      return;
+    }
+
+    const fechaEntrada = new Date(
+      parseInt(seleccionarAño),
+      meses[seleccionarMes],
+      parseInt(seleccionarDia)
+    );
+
+    const fechaSalida = new Date(
+      parseInt(añoSeleccionadoSalida),
+      meses[mesSeleccionadoSalida],
+      parseInt(diaSeleccionadoSalida)
+    );
+
+    if (fechaSalida <= fechaEntrada) {
+      alert("❌ La fecha no esta disponible.");
+    } else {
+      alert("✅ Las fecha esta disponible.");
+    }
+  }
+</script>
+  
+                  <button class="btn btn-primary px-4 py-2" onclick="validarFechas()">Verificar fechas</button>   
 
               </div>
             </div>
@@ -576,6 +619,7 @@
             <strong class="mb-2 d-block">Buscar Hotel</strong>
             <div class="d-flex gap-2">
               <div class="dropdown">
+                
                 <button class="btn btn-primary px-4 py-2">Buscar</button>
               </div>
             </div>
