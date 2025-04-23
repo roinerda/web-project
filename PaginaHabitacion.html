@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Manoa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PaginaHabitacion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body style="background-color: #FAF6EF;">
-  
     <header>
       <nav class="navbar navbar-expand-lg" style="background-color: #FAF6EF;">
         <div class="container-fluid">
@@ -80,7 +81,7 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#"
                       onclick="seleccionarHotel('Four Seasons Resort Costa Rica at Peninsula Papagayo')">Four
-                      Seasons Resort Costa Rica Papagayo</a></li>
+                      Seasons Resort Costa Rica</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#"
                       onclick="seleccionarHotel('Arenal Manoa')">Arenal
@@ -463,7 +464,7 @@
               <div class="d-flex gap-2">
                 <div class="dropdown">
                   <button id="dropdownAñoAdultoBtn"
-                    class="btn btn-outline-primary dropdown-toggle" href=""
+                    class="btn btn-outline-primary dropdown-toggle" href="PaginaHabitacion.html"
                     role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Adultos
@@ -566,95 +567,22 @@
         </header>
 
         <div class="d-flex align-items-center flex-grow-1">
-          <div class="col-md-12">
-            <strong class="mb-2 d-block">Buscar Hotel</strong>
-            <div class="d-flex gap-2">
-              <div class="dropdown">
-                <button class="btn btn-primary px-4 py-2" onclick="window.location.href='PaginaHabitacion.html'">Buscar</button>
-
+            <div class="col-md-12">
+              <strong class="mb-2 d-block">Buscar Hotel</strong>
+              <div class="d-flex gap-2">
+                <div class="dropdown">
+                  <button class="btn btn-primary px-4 py-2">Buscar</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-
-<div class="container mt-4">
-  <div class="row">
-    <!-- Contenedor de la habitación -->
-    <div class="col-md-6">
-      <div class="card mb-3 shadow-sm card-room">
-        <div class="row g-0">
-          <div class="col-md-5">
-            <img src="imajen Junior suite de manoa" class="img-fluid h-100" alt="Junior Suite">
-          </div>
-          <div class="col-md-7 p-3">
-            <h5>Junior Suite <small class="text-muted">(Máx. 4 personas)</small></h5>
-            <p>Bungalows de inspiración colonial con vista al Volcán Arenal. 55 m², ambiente tropical y terraza.</p>
-            <div class="mb-2">
-              <span class="badge bg-light text-dark me-2"> A/C</span>
-              <span class="badge bg-light text-dark me-2"> Wi-Fi</span>
-              <span class="badge bg-light text-dark"> Terraza</span>
-            </div>
-           
-            <hr>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div class="precio-descuento">₡200.907,98</div>
-                <h4 class="text-success">₡180.817,18 <small class="text-danger">-10%</small></h4>
-                <small class="text-muted">Impuestos no incluidos</small>
-              </div>
-              <a href="reservas.html" class="btn btn-dark btn-lg">Reservar</a>
-            </div>
-          </div>
+  
         </div>
       </div>
-    </div>
-
-    <!-- Mapa -->
-    <div class="col-md-6">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.998441092799!2d-84.68022119999999!3d10.500788199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa00c88e1700001%3A0x35b70b1b1b3e9507!2sArenal%20Manoa%20%26%20Hot%20Springs!5e0!3m2!1ses!2scr!4v1745177650200!5m2!1ses!2scr" 
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-    <div class="col-md-6">
-      <div class="card mb-3 shadow-sm card-room">
-        <div class="row g-0">
-          <div class="col-md-5">
-            <img src="imagen superior premium manoa" class="img-fluid h-100" alt="Superior Premium">
-          </div>
-          <div class="col-md-7 p-3">
-            <h5>Superior Premium <small class="text-muted">(Máx. 3 personas)</small></h5>
-            <p>Habitación moderna con decoración tropical, ideal para parejas. 45 m² con vista a los jardines y jacuzzi privado.</p>
-            <div class="mb-2">
-              <span class="badge bg-light text-dark me-2"> Jacuzzi</span>
-              <span class="badge bg-light text-dark me-2"> Wi-Fi</span>
-              <span class="badge bg-light text-dark"> Vista jardín</span>
-            </div>
-    
-            <hr>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div class="precio-descuento">₡185.500,00</div>
-                <h4 class="text-success">₡166.950,00 <small class="text-danger">-10%</small></h4>
-                <small class="text-muted">Impuestos no incluidos</small>
-              </div>
-              <a href="reservas.html" class="btn btn-dark btn-lg">Reservar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</body>
+   
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+  
+  </html>
 </html>
