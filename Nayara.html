@@ -462,11 +462,20 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <div class="precio-descuento">₡420.000,00</div>
-                  <h4 class="text-success">₡378.000,00 <small class="text-danger">-10%</small></h4>
+                  <h4 id="precio1" class="text-success">₡378.000,00 <small class="text-danger">-10%</small></h4>
                   <small class="text-muted">Impuestos no incluidos</small>
                 </div>
-                <a href="reservas.html" class="btn btn-dark btn-lg">Reservar</a>
+                <a href="reservas.html" class="btn btn-dark btn-lg" onclick="guardarPrecio('precio1')">Reservar</a>
               </div>
+              
+              <!-- La función corregida -->
+              <script>
+                function guardarPrecio(idElemento) {
+                  let textoPrecio = document.getElementById(idElemento).childNodes[0].nodeValue.trim();
+                  localStorage.setItem("precioSeleccionado", textoPrecio);
+                  console.log("Precio guardado:", textoPrecio);
+                }
+              </script>
             </div>
           </div>
         </div>
@@ -481,34 +490,6 @@
     </div>
     <div class="col-md-6">
 
-      <div class="card mb-3 shadow-sm card-room">
-        <div class="row g-0">
-          <div class="col-md-5">
-            <img src="imagen canopy plunge papagayo" class="img-fluid h-100" alt="Canopy Plunge Pool Suite">
-          </div>
-          <div class="col-md-7 p-3">
-            <h5>Rainforest Villa <small class="text-muted">(Máx. 3 personas)</small></h5>
-            <p>Villa inmersa en la selva tropical, 75 m² con diseño elegante, terraza con jacuzzi exterior, ducha de
-              lluvia al aire libre y hamaca privada.</p>
-            <div class="mb-2">
-              <span class="badge bg-light text-dark me-2"> Jacuzzi exterior</span>
-              <span class="badge bg-light text-dark me-2"> Ducha de lluvia</span>
-              <span class="badge bg-light text-dark me-2"> Vista selva</span>
-              <span class="badge bg-light text-dark"> Wi-Fi</span>
-            </div>
-
-            <hr>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div class="precio-descuento">₡385.000,00</div>
-                <h4 class="text-success">₡346.500,00 <small class="text-danger">-10%</small></h4>
-                <small class="text-muted">Impuestos no incluidos</small>
-              </div>
-              <a href="reservas.html" class="btn btn-dark btn-lg">Reservar</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="col-md-6">
@@ -529,16 +510,26 @@
             </div>
 
             <hr>
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center mt-3">
               <div>
-                <div class="precio-descuento">₡310.000,00</div>
-                <h4 class="text-success">₡279.000,00 <small class="text-danger">-10%</small></h4>
+                <div class="precio-descuento">₡250.000,00</div>
+                <h4 id="precio2" class="text-success">₡225.000,00 <small class="text-danger">-10%</small></h4>
                 <small class="text-muted">Impuestos no incluidos</small>
               </div>
-              <a href="reservas.html" class="btn btn-dark btn-lg">Reservar</a>
+            
+              <!-- Corrección: se pasa el ID como parámetro -->
+              <a href="reservas.html" class="btn btn-dark btn-lg" onclick="guardarPrecio('precio2')">Reservar</a>
+            
+              <!-- Corrección: la función ahora acepta el ID como parámetro -->
+              <script>
+                function guardarPrecio(idElemento) {
+                  let textoPrecio = document.getElementById(idElemento).childNodes[0].nodeValue.trim();
+                  localStorage.setItem("precioSeleccionado", textoPrecio);
+                  console.log("Precio guardado:", textoPrecio);
+                }
+              </script>
             </div>
           </div>
-
         </div>
       </div>
     </div>
