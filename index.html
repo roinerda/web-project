@@ -512,21 +512,18 @@
 </script>
                 <script>           
   function direcionPaginaHabitacion() {
-    if (hotelSeleccionado && mesSeleccionado && diaSeleccionado && añoSeleccionado && mesSeleccionadoSalida && diaSeleccionadoSalida && añoSeleccionadoSalida && adultoSeleccionado && ninoSeleccionado && habitacionesSeleccionadas === "Arenal Manoa") {
+    if (hotelSeleccionado && mesSeleccionado && diaSeleccionado && añoSeleccionado && mesSeleccionadoSalida && diaSeleccionadoSalida && añoSeleccionadoSalida && adultoSeleccionado && ninoSeleccionado && habitacionesSeleccionadas == "Arenal Manoa") {
       window.location.href = "Manoa.html";
-    } else if (hotelSeleccionado === "Barceló Tambor - All Inclusive") {
+    } else if (hotelSeleccionado == "Barceló Tambor - All Inclusive") {
       window.location.href = "Barcelo.html";
-    } else if (hotelSeleccionado === "Nayara Gardens") {
+    } else if (hotelSeleccionado == "Nayara Gardens") {
       window.location.href = "Nayara.html";
-    }else if (hotelSeleccionado === "Four Seasons Resort Costa Rica at Peninsula Papagayo") {
+    }else if (hotelSeleccionado == "Four Seasons Resort Costa Rica at Peninsula Papagayo") {
       window.location.href = "papagayo.html";
-    } else {
-      window.location.href = "Manoa.html";
-    }
-
-
+    } else if (!hotelSeleccionado || !mesSeleccionado || !diaSeleccionado || !añoSeleccionado || !mesSeleccionadoSalida || !diaSeleccionadoSalida || !añoSeleccionadoSalida || !adultoSeleccionado || !ninoSeleccionado || !habitacionesSeleccionadas){
+      alert("❌ Debes seleccionar todas las fechas de entrada y salida.");  
     
-      
+    }  
   }
   </script>
                 <button class="btn btn-primary px-4 py-2"
@@ -565,7 +562,6 @@
                         onclick="seleccionarAdulto('5')">5</a></li>
                   </ul>
                 </div>
-
                 <script>
                   
                   function seleccionarAdulto(adulto) {
@@ -678,8 +674,8 @@
               <img src="img/barceloPlaya.jpg" class="card-img-top" alt="img">
               <div class="card-body">
                 <h5 class="card-title">Barceló Tambor</h5>
-                <p class="card-text">The Art of Converting Your Barceló Hotel
-                  Experience into Something Unforgettable.</p>
+                <p class="card-text">El arte de convertir tu experiencia en el
+                  Hotel Barceló en algo inolvidable. Reserva ahora.</p>
                 <a href="reservas.html" class="btn btn-primary">Ir a
                   reservar</a>
               </div>
@@ -691,8 +687,9 @@
               <img src="img/Nayara.jpg" class="card-img-top" alt="img">
               <div class="card-body">
                 <h5 class="card-title">Nayara Springs</h5>
-                <p class="card-text">Escape to Nayara Springs, where love
-                  flourishes in the heart of Costa Rica's rainforest..</p>
+                <p class="card-text">Escápate a Nayara Springs, donde el amor
+                  florece en el corazón de la selva tropical de Costa
+                  Rica...</p>
                 <a href="reservas.html" class="btn btn-primary">Ir a
                   reservar</a>
               </div>
@@ -703,8 +700,9 @@
               <img src="img/four.jpg" class="card-img-top" alt="img">
               <div class="card-body">
                 <h5 class="card-title">Four Seasons </h5>
-                <p class="card-text">Discover Exciting Activities Designed Just
-                  For Children At Kids For All Seasons, Book Now.</p>
+                <p class="card-text">Descubre emocionantes actividades diseñadas
+                  especialmente para niños en Kids For All Seasons. Reserva
+                  ahora.</p>
                 <a href="reservas.html" class="btn btn-primary">Ir a
                   reservar</a>
               </div>
@@ -715,8 +713,8 @@
               <img src="img/arenal.jpg" class="card-img-top" alt="img">
               <div class="card-body">
                 <h5 class="card-title">Arenal Manoa</h5>
-                <p class="card-text">Stay on a traditional dairy farm near
-                  Arenal Volcano National Park.Hot springs. Spacious suites.</p>
+                <p class="card-text">Alójese en una granja lechera tradicional
+                  cerca del Parque Nacional Volcán Arenal. Aguas termales</p>
                 <a href="reservas.html" class="btn btn-primary">Ir a
                   reservar</a>
               </div>
