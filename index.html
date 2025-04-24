@@ -11,6 +11,19 @@
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous">
+    <script>
+        // Declaraciones globales para que no se redeclaren en los scripts internos
+        let hotelSeleccionado = null;
+        let mesSeleccionado = null;
+        let diaSeleccionado = null;
+        let añoSeleccionado = null;
+        let mesSeleccionadoSalida = null;
+        let diaSeleccionadoSalida = null;
+        let añoSeleccionadoSalida = null;
+        let adultoSeleccionado = null;
+        let ninoSeleccionado = null;
+        let habitacionesSeleccionadas = null;
+      </script>
   </head>
 
   <body style="background-color: #FAF6EF">
@@ -96,7 +109,7 @@
             </div>
           </div>
           <script>
-              let hotelSeleccionado = null;
+             
             
               function seleccionarHotel(nombreHotel) {
                 document.getElementById('dropdownHotelBtn').textContent = nombreHotel;
@@ -244,7 +257,7 @@
 
                 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    let diaSeleccionado = null;
+    
 
     function seleccionarDia(nombreDia) {
       document.getElementById('dropdownDiasBtn').textContent = nombreDia;
@@ -278,7 +291,7 @@
                 </div>
 
                 <script>
-        let añoSeleccionado = null;
+        
         function seleccionarAño(año) {
           document.getElementById('dropdownAñoBtn').textContent = año;
           añoSeleccionado = año;
@@ -336,7 +349,7 @@
                 </div>
 
                 <script>
-                 let mesSeleccionadoSalida = null;
+                
               function seleccionarMesSalida(nombreMes) {
                 document.getElementById('dropdownMesSalidaBtn').textContent = nombreMes;
                 mesSeleccionadoSalida = nombreMes;
@@ -420,7 +433,7 @@
                   </ul>
                 </div>
                 <script>
-                      let diaSeleccionadoSalida = null;
+                     
                       function seleccionarDiaSalida(dia) {
                         document.getElementById('dropdownDiasSalidaBtn').textContent = dia;
                         diaSeleccionadoSalida = dia;
@@ -448,7 +461,7 @@
                   </ul>
                 </div>
                 <script>
-                let añoSeleccionadoSalida = null;
+               
                
                 function seleccionarAñoSalida(año) {
                   document.getElementById('dropdownAñoSalidaBtn').textContent = año;
@@ -464,7 +477,7 @@
                   };
                 </script>
 
-<script>
+                <script>
   function validarFechas() {
     const seleccionarMes = document.getElementById('dropdownMesBtn').textContent;
     const seleccionarDia = document.getElementById('dropdownDiasBtn').textContent;
@@ -497,8 +510,27 @@
     }
   }
 </script>
-  
-                  <button class="btn btn-primary px-4 py-2" onclick="validarFechas()">Verificar fechas</button>   
+                <script>           
+  function direcionPaginaHabitacion() {
+    if (hotelSeleccionado && mesSeleccionado && diaSeleccionado && añoSeleccionado && mesSeleccionadoSalida && diaSeleccionadoSalida && añoSeleccionadoSalida && adultoSeleccionado && ninoSeleccionado && habitacionesSeleccionadas === "Arenal Manoa") {
+      window.location.href = "Manoa.html";
+    } else if (hotelSeleccionado === "Barceló Tambor - All Inclusive") {
+      window.location.href = "Barcelo.html";
+    } else if (hotelSeleccionado === "Nayara Gardens") {
+      window.location.href = "Nayara.html";
+    }else if (hotelSeleccionado === "Four Seasons Resort Costa Rica at Peninsula Papagayo") {
+      window.location.href = "papagayo.html";
+    } else {
+      window.location.href = "Manoa.html";
+    }
+
+
+    
+      
+  }
+  </script>
+                <button class="btn btn-primary px-4 py-2"
+                  onclick="validarFechas()">Verificar fechas</button>
 
               </div>
             </div>
@@ -512,7 +544,7 @@
               <div class="d-flex gap-2">
                 <div class="dropdown">
                   <button id="dropdownAñoAdultoBtn"
-                    class="btn btn-outline-primary dropdown-toggle" href=""
+                    class="btn btn-outline-primary dropdown-toggle" href
                     role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Adultos
@@ -535,11 +567,11 @@
                 </div>
 
                 <script>
-                  let adultoSeleccionado = null;
+                  
                   function seleccionarAdulto(adulto) {
-                    document.getElementById('dropdownAñoAdultoBtn').textContent = adulto;
-                    adultoSeleccionado = adulto;
-                    console.log("adulto seleccionado:", adultoSeleccionado);
+                   document.getElementById('dropdownAñoAdultoBtn').textContent = adulto;
+                     localStorage.setItem("adultosSeleccionados", adulto);  // Se guarda en localStorage
+                     console.log("Adultos seleccionados:", adulto);
                   }
                 </script>
 
@@ -569,7 +601,7 @@
                 </div>
 
                 <script>
-                  let ninoSeleccionado = null;
+                 
                   function seleccionarnino(nino) {
                     document.getElementById('dropdownninoBtn').textContent = nino;
                     ninoSeleccionado = nino;
@@ -600,7 +632,7 @@
                   </ul>
 
                   <script>
-                    let habitacionesSeleccionadas = null;
+                    
                     function seleccionarHabitaciones(habitaciones) {
                       document.getElementById('dropdownHabitacionesBtn').textContent = habitaciones;
                       habitacionesSeleccionadas = habitaciones;
@@ -613,19 +645,24 @@
             </div>
           </div>
         </header>
+        <script>
 
+          
+
+        </script>
         <div class="d-flex align-items-center flex-grow-1">
           <div class="col-md-12">
             <strong class="mb-2 d-block">Buscar Hotel</strong>
             <div class="d-flex gap-2">
               <div class="dropdown">
-                <button class="btn btn-primary px-4 py-2" onclick="window.location.href='PaginaHabitacion.html'">Buscar</button>
+
+                <button class="btn btn-primary px-4 py-2"
+                  onclick="direcionPaginaHabitacion()">Buscar</button>
 
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -643,7 +680,8 @@
                 <h5 class="card-title">Barceló Tambor</h5>
                 <p class="card-text">The Art of Converting Your Barceló Hotel
                   Experience into Something Unforgettable.</p>
-                <a href="reservas.html" class="btn btn-primary">Ir a reservar</a>
+                <a href="reservas.html" class="btn btn-primary">Ir a
+                  reservar</a>
               </div>
 
             </div>
@@ -655,7 +693,8 @@
                 <h5 class="card-title">Nayara Springs</h5>
                 <p class="card-text">Escape to Nayara Springs, where love
                   flourishes in the heart of Costa Rica's rainforest..</p>
-                <a href="reservas.html" class="btn btn-primary">Ir a reservar</a>
+                <a href="reservas.html" class="btn btn-primary">Ir a
+                  reservar</a>
               </div>
             </div>
           </div>
@@ -666,7 +705,8 @@
                 <h5 class="card-title">Four Seasons </h5>
                 <p class="card-text">Discover Exciting Activities Designed Just
                   For Children At Kids For All Seasons, Book Now.</p>
-                <a href="reservas.html" class="btn btn-primary">Ir a reservar</a>
+                <a href="reservas.html" class="btn btn-primary">Ir a
+                  reservar</a>
               </div>
             </div>
           </div>
@@ -677,7 +717,8 @@
                 <h5 class="card-title">Arenal Manoa</h5>
                 <p class="card-text">Stay on a traditional dairy farm near
                   Arenal Volcano National Park.Hot springs. Spacious suites.</p>
-                <a href="reservas.html" class="btn btn-primary">Ir a reservar</a>
+                <a href="reservas.html" class="btn btn-primary">Ir a
+                  reservar</a>
               </div>
             </div>
           </div>
