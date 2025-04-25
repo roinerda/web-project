@@ -513,7 +513,7 @@
 </script>
                 <script>           
   function direcionPaginaHabitacion() {
-    if (hotelSeleccionado && mesSeleccionado && diaSeleccionado && añoSeleccionado && mesSeleccionadoSalida && diaSeleccionadoSalida && añoSeleccionadoSalida && adultoSeleccionado && ninoSeleccionado && habitacionesSeleccionadas == "Arenal Manoa") {
+    if (hotelSeleccionado  == "Arenal Manoa") {
       window.location.href = "Manoa.html";
     } else if (hotelSeleccionado == "Barceló Tambor - All Inclusive") {
       window.location.href = "Barcelo.html";
@@ -521,8 +521,8 @@
       window.location.href = "Nayara.html";
     }else if (hotelSeleccionado == "Four Seasons Resort Costa Rica at Peninsula Papagayo") {
       window.location.href = "papagayo.html";
-    } else if (!hotelSeleccionado || !mesSeleccionado || !diaSeleccionado || !añoSeleccionado || !mesSeleccionadoSalida || !diaSeleccionadoSalida || !añoSeleccionadoSalida || !adultoSeleccionado || !ninoSeleccionado || !habitacionesSeleccionadas){
-      alert("❌ Debes seleccionar todas las fechas de entrada y salida.");  
+    } else if (!mesSeleccionado || !diaSeleccionado || !añoSeleccionado || !mesSeleccionadoSalida || !diaSeleccionadoSalida || !añoSeleccionadoSalida || !adultoSeleccionado || !ninoSeleccionado || !habitacionesSeleccionadas){
+      alert("❌ Debes seleccionar todas los campos .");  
     
     }  
   }
@@ -567,7 +567,7 @@
                   
                   function seleccionarAdulto(adulto) {
                    document.getElementById('dropdownAñoAdultoBtn').textContent = adulto;
-                     localStorage.setItem("adultosSeleccionados", adulto);  // Se guarda en localStorage
+                    adultoSeleccionado = adulto;
                      console.log("Adultos seleccionados:", adulto);
                   }
                 </script>

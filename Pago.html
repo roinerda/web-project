@@ -17,6 +17,77 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
   </style>
+
+  <script>
+function ValidarDatosTarjeta() {
+  // Validar número de tarjeta
+  const numeroTarjeta = document.getElementById('cardNumber');
+  const valorNumeroTarjeta = numeroTarjeta.value.replace(/\s/g, '');
+  if (!/^\d{16}$/.test(valorNumeroTarjeta)) {
+    alert('Por favor ingrese un número de tarjeta válido de 16 dígitos');
+    numeroTarjeta.focus();
+    return false;
+  }
+
+  // Validar fecha de expiración
+  const fechaExpiracion = document.getElementById('expiryDate');
+  if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(fechaExpiracion.value)) {
+    alert('Por favor ingrese una fecha de expiración válida en formato MM/AA');
+    fechaExpiracion.focus();
+    return false;
+  }
+
+  // Validar código de seguridad (CVV)
+  const cvv = document.getElementById('cvv');
+  if (!/^\d{3}$/.test(cvv.value)) {
+    alert('Por favor ingrese un código de seguridad (CVV) válido de 3 dígitos');
+    cvv.focus();
+    return false;
+  }
+
+  // Validar nombre del titular con regex (solo letras y espacios)
+  const nombreTitular = document.getElementById('cardHolderName');
+  if (!/^[A-Za-z\s]+$/.test(nombreTitular.value.trim())) {
+    alert('Por favor ingrese un nombre válido para el titular (solo letras y espacios)');
+    nombreTitular.focus();
+    return false;
+  }
+
+  // Validar documento de identidad con regex (solo números)
+  const documentoIdentidad = document.getElementById('documentId');
+  if (!/^\d+$/.test(documentoIdentidad.value.trim())) {
+    alert('Por favor ingrese un documento de identidad válido (solo números)');
+    documentoIdentidad.focus();
+    return false;
+  }
+
+  // Validar correo electrónico
+  const correoElectronico = document.getElementById('email');
+  if (!/\S+@\S+\.\S+/.test(correoElectronico.value)) {
+    alert('Por favor ingrese un correo electrónico válido');
+    correoElectronico.focus();
+    return false;
+  }
+
+  // Si todas las validaciones pasan, retornamos true
+  return true;
+}
+
+function Redirigir() {
+  // Si la validación de la tarjeta no es exitosa
+  if (!ValidarDatosTarjeta()) {
+    alert('Error en los datos de la tarjeta. Por favor, verifique e intente nuevamente.');
+    return false;  // No redirige si la validación falla
+  }
+
+  // Si la validación es exitosa, mostrar mensaje de éxito y redirigir
+  alert('Pago realizado con éxito');
+  window.location.href = "gracias.html"; // Redirige a la página "gracias.html"
+  return true;  // Redirige después de la validación exitosa
+}
+  
+   
+  </script>
 </head>
     <body style="background-color: #FAF6EF;">
   
@@ -74,47 +145,44 @@
       }
     });
   </script>
-  <form onsubmit="return pagar()">
-    <div class="mb-3">
-      <label class="form-label">Número de la tarjeta</label>
-      <input type="text" class="form-control" required>
+ <form id="paymentForm">
+  <div class="mb-3">
+    <label class="form-label">Número de la tarjeta</label>
+    <input type="text" class="form-control" id="cardNumber" required>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Vencimiento</label>
+      <input type="text" class="form-control" id="expiryDate" placeholder="MM/AA" required>
     </div>
-    <div class="row mb-3">
-      <div class="col">
-        <label class="form-label">Vencimiento</label>
-        <input type="text" class="form-control" placeholder="MM/AA" required>
-      </div>
-      <div class="col">
-        <label class="form-label">Código de seguridad</label>
-        <input type="text" class="form-control" placeholder="CVV" required>
-      </div>
+    <div class="col">
+      <label class="form-label">Código de seguridad</label>
+      <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Nombre del titular</label>
-      <input type="text" class="form-control" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Documento de identidad</label>
-      <input type="text" class="form-control" placeholder="Ej: 999999999" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Correo electrónico</label>
-      <input type="email" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-primary w-100">Pagar</button>
-  </form>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Nombre del titular</label>
+    <input type="text" class="form-control" id="cardHolderName" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Documento de identidad</label>
+    <input type="text" class="form-control" id="documentId" placeholder="Ej: 999999999" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" required>
+  </div>
+  <button type="button" class="btn btn-primary px-4 py-2" onclick="Redirigir()">Pagar</button>
+</form>
 </div>
 
 <script>
 
   document.getElementById("montoFinal").innerText = sessionStorage.getItem("montoTotal") || "₡0.00";
 
+   
  
-  function pagar() {
-    alert("Pago procesado ");
-    window.location.href = "gracias.html";
-    return false;
-  }
+
 </script>
 
 </body>
