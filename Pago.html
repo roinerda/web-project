@@ -18,7 +18,7 @@
 
   <script>
 function ValidarDatosTarjeta() {
-  // Validar número de tarjeta
+
   const numeroTarjeta = document.getElementById('cardNumber');
   const valorNumeroTarjeta = numeroTarjeta.value.replace(/\s/g, '');
   if (!/^\d{16}$/.test(valorNumeroTarjeta)) {
@@ -27,7 +27,7 @@ function ValidarDatosTarjeta() {
     return false;
   }
 
-  // Validar fecha de expiración
+
   const fechaExpiracion = document.getElementById('expiryDate');
   if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(fechaExpiracion.value)) {
     alert('Por favor ingrese una fecha de expiración válida en formato MM/AA');
@@ -35,7 +35,7 @@ function ValidarDatosTarjeta() {
     return false;
   }
 
-  // Validar código de seguridad (CVV)
+ 
   const cvv = document.getElementById('cvv');
   if (!/^\d{3}$/.test(cvv.value)) {
     alert('Por favor ingrese un código de seguridad (CVV) válido de 3 dígitos');
@@ -43,7 +43,7 @@ function ValidarDatosTarjeta() {
     return false;
   }
 
-  // Validar nombre del titular con regex (solo letras y espacios)
+ 
   const nombreTitular = document.getElementById('cardHolderName');
   if (!/^[A-Za-z\s]+$/.test(nombreTitular.value.trim())) {
     alert('Por favor ingrese un nombre válido para el titular (solo letras y espacios)');
@@ -51,7 +51,7 @@ function ValidarDatosTarjeta() {
     return false;
   }
 
-  // Validar documento de identidad con regex (solo números)
+ 
   const documentoIdentidad = document.getElementById('documentId');
   if (!/^\d+$/.test(documentoIdentidad.value.trim())) {
     alert('Por favor ingrese un documento de identidad válido (solo números)');
@@ -59,7 +59,7 @@ function ValidarDatosTarjeta() {
     return false;
   }
 
-  // Validar correo electrónico
+
   const correoElectronico = document.getElementById('email');
   if (!/\S+@\S+\.\S+/.test(correoElectronico.value)) {
     alert('Por favor ingrese un correo electrónico válido');
@@ -67,23 +67,22 @@ function ValidarDatosTarjeta() {
     return false;
   }
 
-  // Si todas las validaciones pasan, retornamos true
+ 
   return true;
 }
 
 function Redirigir() {
-  // Si la validación de la tarjeta no es exitosa
+  
   if (!ValidarDatosTarjeta()) {
     alert('Error en los datos de la tarjeta. Por favor, verifique e intente nuevamente.');
-    return false;  // No redirige si la validación falla
+    return false;
   }
 
-  // Si la validación es exitosa, mostrar mensaje de éxito y redirigir
-  alert('Pago realizado con éxito');
-  window.location.href = "gracias.html"; // Redirige a la página "gracias.html"
-  return true;  // Redirige después de la validación exitosa
-}
   
+  alert('Pago realizado con éxito');
+  window.location.href = "gracias.html"; 
+  return true;  
+}
    
   </script>
 </head>
@@ -174,14 +173,7 @@ function Redirigir() {
 </form>
 </div>
 
-<script>
 
-  document.getElementById("montoFinal").innerText = sessionStorage.getItem("montoTotal") || "₡0.00";
-
-   
- 
-
-</script>
 
 </body>
 </html>
