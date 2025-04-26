@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Papagayo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="img/logo.png" />
+  <head>
+    <meta charset="UTF-8">
+    <title>Papagayo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="img/logo.png" />
+    <link rel="stylesheet" href="Style.css">
 
-</head>
-<body style="background-color: #FAF6EF;">
-  
+  </head>
+  <body style="background-color: #FAF6EF;">
+
     <header>
       <nav class="navbar navbar-expand-lg" style="background-color: #FAF6EF;">
         <div class="container-fluid">
@@ -464,7 +467,7 @@
               <div class="d-flex gap-2">
                 <div class="dropdown">
                   <button id="dropdownAñoAdultoBtn"
-                    class="btn btn-outline-primary dropdown-toggle" href=""
+                    class="btn btn-outline-primary dropdown-toggle" href
                     role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Adultos
@@ -571,7 +574,8 @@
             <strong class="mb-2 d-block">Buscar Hotel</strong>
             <div class="d-flex gap-2">
               <div class="dropdown">
-                <button class="btn btn-primary px-4 py-2" onclick="window.location.href='PaginaHabitacion.html'">Buscar</button>
+                <button class="btn btn-primary px-4 py-2"
+                  onclick="window.location.href='PaginaHabitacion.html'">Buscar</button>
 
               </div>
             </div>
@@ -582,93 +586,115 @@
     </div>
     <div class="container mt-4">
       <div class="row">
-    <div class="col-md-6">
-      <div class="card mb-3 shadow-sm card-room">
-        <div class="row g-0">
-          <div class="col-md-5">
-            <img src="img/ocea1.jpg" class="img-fluid h-100" alt="Ocean-View Suite">
-          </div>
-          <div class="col-md-7 p-3">
-            <h5>Ocean-View Suite <small class="text-muted">(Máx. 4 personas)</small></h5>
-            <p>Elegante suite con vista panorámica al océano, 70 m² de lujo tropical, terraza privada y ducha al aire libre.</p>
-            <div class="mb-2">
-              <span class="badge bg-light text-dark me-2"> Vista al mar</span>
-              <span class="badge bg-light text-dark me-2"> A/C</span>
-              <span class="badge bg-light text-dark me-2"> Ducha exterior</span>
-              <span class="badge bg-light text-dark"> Wi-Fi</span>
-            </div>
-    
-            <hr>
-           
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <div class="precio-descuento">₡395.000,00</div>
-                <h4 id="precio1" class="text-success">₡355.500,00 <small class="text-danger">-10%</small></h4>
-                <small class="text-muted">Impuestos no incluidos</small>
+        <div class="col-md-6">
+          <div class="card mb-3 shadow-sm card-room">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img src="img/ocea1.jpg" class="img-fluid h-100"
+                  alt="Ocean-View Suite">
               </div>
-              <a href="reservas.html" class="btn btn-dark btn-lg" onclick="guardarPrecio('precio1')">Reservar</a>
-            </div>
-            
-            <!-- La función corregida -->
-            <script>
+              <div class="col-md-7 p-3">
+                <h5>Ocean-View Suite <small class="text-muted">(Máx. 4
+                    personas)</small></h5>
+                <p>Elegante suite con vista panorámica al océano, 70 m² de lujo
+                  tropical, terraza privada y ducha al aire libre.</p>
+                <div class="mb-2">
+                  <span class="badge bg-light text-dark me-2"> Vista al
+                    mar</span>
+                  <span class="badge bg-light text-dark me-2"> A/C</span>
+                  <span class="badge bg-light text-dark me-2"> Ducha
+                    exterior</span>
+                  <span class="badge bg-light text-dark"> Wi-Fi</span>
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <div class="precio-descuento">₡395.000,00</div>
+                    <h4 id="precio1" class="text-success">₡355.500,00 <small
+                        class="text-danger">-10%</small></h4>
+                    <small class="text-muted">Impuestos no incluidos</small>
+                  </div>
+                  <a href="reservas.html" class="btn btn-dark btn-lg"
+                    onclick="guardarPrecio('precio1')">Reservar</a>
+                </div>
+
+                <!-- La función corregida -->
+                <script>
               function guardarPrecio(idElemento) {
                 let textoPrecio = document.getElementById(idElemento).childNodes[0].nodeValue.trim();
                 localStorage.setItem("precioSeleccionado", textoPrecio);
                 console.log("Precio guardado:", textoPrecio);
               }
             </script>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250909.42806395527!2d-85.93378408052062!3d10.698973107370243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f75874a6b25efe3%3A0xb116ff87bac1fd18!2sFour%20Seasons%20Peninsula%20Papagayo%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1745183010006!5m2!1ses!2scr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div class="col-md-6">
-      <div class="card mb-3 shadow-sm card-room">
-        <div class="row g-0">
-          <div class="col-md-5">
-            <img src="img/cano.jpg" class="img-fluid h-100" alt="Canopy Plunge Pool Suite">
-          </div>
-          <div class="col-md-7 p-3">
-            <h5>Canopy Plunge Pool Suite <small class="text-muted">(Máx. 2 personas)</small></h5>
-            <p>Suite escondida en lo alto de la selva con piscina privada, 60 m² de espacio, ducha al aire libre y terraza con hamacas.</p>
-            <div class="mb-2">
-              <span class="badge bg-light text-dark me-2"> Piscina privada</span>
-              <span class="badge bg-light text-dark me-2"> Terraza</span>
-              <span class="badge bg-light text-dark me-2"> A/C</span>
-              <span class="badge bg-light text-dark"> Wi-Fi</span>
-            </div>
-    
-            <hr>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div>
-                <div class="precio-descuento">₡250.000,00</div>
-                <h4 id="precio2" class="text-success">₡225.000,00 <small class="text-danger">-10%</small></h4>
-                <small class="text-muted">Impuestos no incluidos</small>
+        <div class="col-md-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250909.42806395527!2d-85.93378408052062!3d10.698973107370243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f75874a6b25efe3%3A0xb116ff87bac1fd18!2sFour%20Seasons%20Peninsula%20Papagayo%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1745183010006!5m2!1ses!2scr"
+            width="400" height="300" style="border:0;" allowfullscreen
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3 shadow-sm card-room">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img src="img/cano.jpg" class="img-fluid h-100"
+                  alt="Canopy Plunge Pool Suite">
               </div>
-            
-              <!-- Corrección: se pasa el ID como parámetro -->
-              <a href="reservas.html" class="btn btn-dark btn-lg" onclick="guardarPrecio('precio2')">Reservar</a>
-            
-              <!-- Corrección: la función ahora acepta el ID como parámetro -->
-              <script>
+              <div class="col-md-7 p-3">
+                <h5>Canopy Plunge Pool Suite <small class="text-muted">(Máx. 2
+                    personas)</small></h5>
+                <p>Suite escondida en lo alto de la selva con piscina privada,
+                  60 m² de espacio, ducha al aire libre y terraza con
+                  hamacas.</p>
+                <div class="mb-2">
+                  <span class="badge bg-light text-dark me-2"> Piscina
+                    privada</span>
+                  <span class="badge bg-light text-dark me-2"> Terraza</span>
+                  <span class="badge bg-light text-dark me-2"> A/C</span>
+                  <span class="badge bg-light text-dark"> Wi-Fi</span>
+                </div>
+
+                <hr>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3">
+                  <div>
+                    <div class="precio-descuento">₡250.000,00</div>
+                    <h4 id="precio2" class="text-success">₡225.000,00 <small
+                        class="text-danger">-10%</small></h4>
+                    <small class="text-muted">Impuestos no incluidos</small>
+                  </div>
+
+                  <!-- Corrección: se pasa el ID como parámetro -->
+                  <a href="reservas.html" class="btn btn-dark btn-lg"
+                    onclick="guardarPrecio('precio2')">Reservar</a>
+
+                  <!-- Corrección: la función ahora acepta el ID como parámetro -->
+                  <script>
                 function guardarPrecio(idElemento) {
                   let textoPrecio = document.getElementById(idElemento).childNodes[0].nodeValue.trim();
                   localStorage.setItem("precioSeleccionado", textoPrecio);
                   console.log("Precio guardado:", textoPrecio);
                 }
               </script>
+                </div>
+
+              </div>
+
             </div>
-              
-            </div>
-        
           </div>
         </div>
       </div>
-    </div>
-    
-    
 
-</body>
-</html>
+    </body>
+    <footer>
+      <div class="container text-center py-5">
+        <h5>HotelBooking</h5>
+        <p>Email: reservasfiocom.com
+          <p>&copy; 2025 </p>
+        </footer>
+      </html>
